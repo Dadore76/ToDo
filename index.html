@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TODO List</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+	</head>
+	<body onload="loadItems()">
+        <div class="header">
+            <h1 class="title">ToDo List</h1>
+        </div>
+
+        <form id="form" onsubmit="return false;">
+            <div class="container">
+                <div class="add_container">
+                    <input type="text" id="item" placeholder="Add Item" class="add_item">
+                    <button class="add_button" onclick="addItem()">
+                        <i class="bi bi-check2-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="list_container">
+            <div class="list" id="list">
+            </div>
+        </div>
+        
+        <footer>
+            <div id="contact">&copy;Copyright</div>
+        </footer>
+
+        <script src="/js/Item.js"></script>
+        <script src="/js/app.js"></script>
+    </body>
+</html>

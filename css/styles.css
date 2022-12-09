@@ -1,0 +1,128 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* background: beige; */
+    height: 100%;
+    background: #f9f9f9;
+}
+
+.header {
+    height: 2vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 90px;
+    color: #fff;
+    background: linear-gradient(to right, #43b0ad, #e0a2a2);
+    /* background: linear-gradient(to right, #2a1caa, #974343); */
+    /* opacity: 1; */
+}
+
+.title {
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 50px;
+    color: #000;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    padding: 20px 0px;
+    background: #f0f0f0;
+}
+
+.add_item, 
+.add_button {
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #aaa;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+}
+
+.add_item {
+    color: #424242;
+    width: 500px;
+}
+
+.add_item::placeholder{
+    color: #929292;
+}
+
+.add_item:focus,
+.add_button:focus {
+    box-shadow: 0px 0px 10px 1px #2899b9;
+    outline: none;
+}
+
+.add_button {
+    color: #1900f6;
+}
+
+ul {
+    list-style: none;
+}
+
+.list_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 540px;
+    padding: 20px;
+    /* box-shadow: 0px 0px 10px 1px #2899b9; */
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    background: #e0a2a2;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.item:hover {
+    box-shadow: 0px 0px 10px 1px gray;
+}
+
+.item_checked {
+    text-decoration: line-through;
+    background: #43b0ad;
+    font-weight: 600;
+}
+
+.item > i {
+    padding: 0px 10px;
+}
+
+.item span {
+    flex: 1;
+}
+
+footer > div { 
+    clear: both;
+    font-size: 12px;
+    color: gray;
+    /* background-color: #000; */
+    text-align: center;
+    width: 100%;
+}
