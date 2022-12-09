@@ -1,5 +1,5 @@
 let items = [
-    new Item("test")
+    // new Item("test")
 ];
 
 let loadItems = () => {
@@ -27,15 +27,15 @@ let createItem = (item) => {
     return html;
 }
 
-// let addItem = () => {
-//     let form = document.forms["form"];
-//     let newItem = form["item"];
+let addItem = () => {
+    let form = document.forms["form"];
+    let newItem = form["item"];
 
-//     items.push(new Item(newItem.value))
-//     newItem.value = "";
+    items.push(new Item(newItem.value))
+    newItem.value = "";
 
-//     loadItems();
-// }
+    loadItems();
+}
 
 let markChecked = (item) => {
     let id = item.id.replace("lbl", "");
@@ -54,12 +54,12 @@ let markChecked = (item) => {
         items[itemIndex].status = false;
 }
 
-// let delItem = (icon) => {
-//     let id = icon.id.replace("del", "");
-//     let deleteIndex = items.findIndex(item => item.id == id);
+let delItem = (icon) => {
+    let id = icon.id.replace("del", "");
+    let deleteIndex = items.findIndex(item => item.id == id);
 
-//     items.splice(deleteIndex, 1);
+    items.splice(deleteIndex, 1);
     
-//     loadItems();
-// }
+    loadItems();
+}
 
