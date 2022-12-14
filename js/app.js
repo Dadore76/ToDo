@@ -1,19 +1,28 @@
 let items = [
-    // new Item("test")
+    // new Item("Hola"),
+    // new Item("Mundo"),
+    // new Item("Cruel")
 ];
 
 let loadItems = () => {
-    let htmlItems = "";
+    let htmlItemsPending = "";
+    let htmlItemsDone = "";
 
     // Order by Id and then by status
     items.sort((a, b) => Number(a.id) - Number(b.id));
     items.sort((a, b) => Number(a.status) - Number(b.status));
 
     for (const item of items) {
-        htmlItems += createItem(item);
+        if (item.status) {
+            htmlItemsDone += createItem(item);
+        }
+        else {
+            htmlItemsPending += createItem(item);
+        }
     }
     
-    document.getElementById("list").innerHTML = htmlItems;  
+    document.getElementById("list-pending").innerHTML = htmlItemsPending;  
+    document.getElementById("list-done").innerHTML = htmlItemsDone;  
     document.getElementById("item").focus();
 }
 
