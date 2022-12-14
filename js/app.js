@@ -6,14 +6,15 @@ let loadItems = () => {
     let htmlItems = "";
 
     // Order by Id and then by status
-    items = items.sort((a, b) => Number(a.id) - Number(b.id));
-    items = items.sort((a, b) => Number(a.status) - Number(b.status));
+    items.sort((a, b) => Number(a.id) - Number(b.id));
+    items.sort((a, b) => Number(a.status) - Number(b.status));
 
     for (const item of items) {
         htmlItems += createItem(item);
     }
     
-    document.getElementById("list").innerHTML = htmlItems;    
+    document.getElementById("list").innerHTML = htmlItems;  
+    document.getElementById("item").focus();
 }
 
 let createItem = (item) => {
