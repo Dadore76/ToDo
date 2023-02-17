@@ -1,4 +1,3 @@
-var json = localStorage.getItem("itemArray");
 let items = [
     // new Item("Hola"),
     // new Item("Mundo"),
@@ -6,7 +5,6 @@ let items = [
 ];
 
 let loadItems = () => {
-    localStorage.setItem("itemArray", JSON.stringify(items));
     let htmlItemsPending = "";
     let htmlItemsDone = "";
 
