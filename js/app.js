@@ -1,3 +1,4 @@
+var json = localStorage.getItem("itemArray");
 let items = [
     // new Item("Hola"),
     // new Item("Mundo"),
@@ -5,6 +6,7 @@ let items = [
 ];
 
 let loadItems = () => {
+    localStorage.setItem("itemArray", JSON.stringify(items));
     let htmlItemsPending = "";
     let htmlItemsDone = "";
 
@@ -44,7 +46,7 @@ let addItem = () => {
     let form = document.forms["form"];
     let newItem = form["item"];
 
-    items.push(new Item(newItem.value))
+    items.push(new Item(newItem.value));
     newItem.value = "";
 
     loadItems();
