@@ -1,10 +1,17 @@
 class Item {
     static contItems = 0;
 
-    constructor(description) {
+    constructor(obj) {
         this._id = ++Item.contItems;
-        this._description = description;
-        this._status = false;
+
+        if (typeof (obj) === "string") {
+            this._description = obj;
+            this._status = false;
+        }
+        else {
+            this._description = obj._description;    
+            this._status = obj._status;    
+        }
     }
 
     get id() {

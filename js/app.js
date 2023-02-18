@@ -1,16 +1,30 @@
+var json = localStorage.getItem("itemArray");
 let items = [
     // new Item("Hola"),
     // new Item("Mundo"),
     // new Item("Cruel")
 ];
 
+window.addEventListener("load", () => {
+    let newItems = JSON.parse(localStorage.getItem("itemArray"));
+    
+    for (element of newItems) {
+        items.push(new Item(element));
+    }
+
+    loadItems();
+    
+}, false);
+
 let loadItems = () => {
     let htmlItemsPending = "";
     let htmlItemsDone = "";
 
     // Order by Id and then by status
-    items.sort((a, b) => Number(a.id) - Number(b.id));
-    items.sort((a, b) => Number(a.status) - Number(b.status));
+    if (items.length > 1) {
+        items.sort((a, b) => Number(a.id) - Number(b.id));
+        items.sort((a, b) => Number(a.status) - Number(b.status));
+    }
 
     for (const item of items) {
         if (item.status) {
@@ -45,6 +59,7 @@ let addItem = () => {
     let newItem = form["item"];
 
     items.push(new Item(newItem.value));
+    localStorage.setItem("itemArray", JSON.stringify(items));
     newItem.value = "";
 
     loadItems();
@@ -66,6 +81,8 @@ let markChecked = (item) => {
     else
         items[itemIndex].status = false;
     
+    localStorage.setItem("itemArray", JSON.stringify(items));
+    
     loadItems();
 }
 
@@ -74,6 +91,7 @@ let delItem = (icon) => {
     let deleteIndex = items.findIndex(item => item.id == id);
 
     items.splice(deleteIndex, 1);
+    localStorage.setItem("itemArray", JSON.stringify(items));
     
     loadItems();
 }
