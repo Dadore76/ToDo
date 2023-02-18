@@ -6,7 +6,7 @@ class Item {
 
         if (typeof (obj) === "string") {
             this._description = obj;
-            this._status = false;
+            this._status = "todo";
         }
         else {
             this._description = obj._description;    

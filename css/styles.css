@@ -81,7 +81,8 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
     gap: 30px;
     padding-top: 15px;
     min-height: 350px;
@@ -92,10 +93,13 @@ ul {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 2  0px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #43b0ad;
-    width: 35%;
+    /* width: 35%; */
+    width: 375px;
+    min-width: 200px;
+
 }
 
 .list {
@@ -109,7 +113,7 @@ ul {
 .item {
     display: flex;
     align-items: center;
-    background: #e0a2a2;
+    background: #eeaeae;
     padding: 15px;
     margin: 5px;
     border-radius: 5px;
@@ -119,6 +123,14 @@ ul {
 .item:hover {
     box-shadow: 0px 0px 10px 1px gray;
     cursor: pointer;
+}
+
+.item_doing {
+    background: #f9b76c;
+}
+
+.item_doing > label > span{
+    text-decoration: underline;
 }
 
 .item_checked {
@@ -133,6 +145,15 @@ ul {
 .check_item {
     flex: 1;
     cursor: pointer;
+}
+
+.icon_ret {
+    display: none;
+    padding-right: 10px;
+}
+
+.item_doing:hover > .icon_ret {
+    display: block;
 }
 
 .icon_del {
@@ -155,6 +176,7 @@ footer > div {
     .list_container {
         flex-direction: column;
         align-items: center;
+        flex-wrap: nowrap;
     }
 
     .item_container {
